@@ -9,8 +9,8 @@ class RestGetControllerSpec extends Specification with LazyLogging {
       val restGetController = new RestGetController()
       val actionResult = restGetController.getHello()
 
-      logger.info(s"{}", actionResult.body.Result)
       actionResult.status must_== 200
+      actionResult.body.Result must_== Map("message" -> "HelloWorld.")
     }
   }
 }
