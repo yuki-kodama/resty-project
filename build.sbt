@@ -1,8 +1,6 @@
-
 name := "resty-project"
 
 version := "0.0.1"
-
 scalaVersion := "2.12.3"
 val JettyVersion = "9.4.6.v20170531"
 
@@ -31,7 +29,6 @@ artifactName := { (_, module: ModuleID, artifact: Artifact) =>
   artifact.name + "." + artifact.extension
 }
 enablePlugins(JettyPlugin)
-
 containerPort := 8080
 
 
