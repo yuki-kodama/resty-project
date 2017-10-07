@@ -21,7 +21,7 @@ scalacOptions := Seq("-deprecation")
 scalacOptions in Test ++= Seq("-Yrangepos")
 javaOptions in Jetty ++= Seq(
   "-Xms512m", "-Xmx512m",
-  "-Xloggc:logs/gc_%p_%t.log", "-XX:+PrintGCDetails", "-XX:+PrintGCDateStamps",
+  "-Xloggc:logs/gc_%p_%t.log", "-XX:+PrintGCDetails",
   "-Xdebug", "-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000"
 )
 
