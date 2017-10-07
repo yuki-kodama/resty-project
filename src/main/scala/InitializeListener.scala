@@ -10,7 +10,9 @@ class InitializeListener extends ServletContextListener {
   }
 
   override def contextInitialized(sce: ServletContextEvent): Unit = {
-    Resty.register(new RestGetController())
-    Resty.register(new RestPostController())
+    Resty.register(new DummyController())
+    // Resty.register(new HelloController())
+    // Resty.register(new RestGetController())
+    // Resty.register(new RestPostController())
   }
 }
