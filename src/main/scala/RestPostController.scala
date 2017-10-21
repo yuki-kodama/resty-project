@@ -21,12 +21,20 @@ class RestPostController extends LazyLogging {
 
   @Action(method = "POST", path = "/test/{name}")
   def postTest(name: String, requestBody: RequestBody): ActionResult[ResultRestPost] = {
+    // {
+    // "message": "message",
+    // "seq": [1],
+    // "service": {"name": "hoge", "id": "123"}
+    // }
     logger.debug(s"name:${name}")
-    if (name == "test"){
-    //  return ActionResult(400, ResultRestPost(Map.empty[String, String]), Map("Test" -> "hoge"))
-    }
     val map = Map("name" -> name, "message" -> requestBody.message)
     ActionResult(200, ResultRestPost(map), Map("Test" -> "hoge"))
+  }
+
+  @Action(method = "POST", path = "/errortest.json")
+  def postErrorTest(): ActionResult[ResultRestPost] = {
+    val map = Map("message" -> "there are invalid parameter.")
+    ActionResult(400, ResultRestPost(map), Map("detail" -> "xxx error."))
   }
 }
 
