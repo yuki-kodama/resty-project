@@ -1,7 +1,7 @@
 name := "resty-project"
 
 version := "0.0.1"
-scalaVersion := "2.12.3"
+scalaVersion := "2.12.4"
 val JettyVersion = "9.4.6.v20170531"
 
 libraryDependencies ++= Seq(
