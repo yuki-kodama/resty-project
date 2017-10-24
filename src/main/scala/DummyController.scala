@@ -3,7 +3,7 @@ import com.github.takezoe.resty._
 class DummyController {
 
   @Action(method = "GET", path = "/dummy")
-  def dummuy(): DummyMessage = {
+  def dummy(): DummyMessage = {
     DummyMessage("dummy")
   }
 
