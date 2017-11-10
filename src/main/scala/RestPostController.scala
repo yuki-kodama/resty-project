@@ -18,7 +18,6 @@ class RestPostController extends LazyLogging {
     ActionResult(200, ResultRestPost(map))
   }
 
-
   @Action(method = "POST", path = "/test/{name}")
   def postTest(name: String, requestBody: RequestBody): ActionResult[ResultRestPost] = {
     // {
@@ -40,7 +39,9 @@ class RestPostController extends LazyLogging {
 
 case class ResultRestPost(Result: AnyRef)
 
-case class RequestBody(message: Option[String], seq: Seq[String], service: Service){
+case class RequestBody(message: Option[String],
+                       seq: Seq[String],
+                       service: Service){
   assert(message.get.length < 20, "message must be less than 20 charactors.")
 }
 
